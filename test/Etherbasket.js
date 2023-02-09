@@ -5,5 +5,9 @@ const tokens = (n) => {
 }
 
 describe("Etherbasket", () => {
-
+  it('has a name', async () => {
+    const Etherbasket = await ethers.getContractFactory("Etherbasket");
+    etherbasket = await Etherbasket.deploy()
+    expect(await etherbasket.name()).to.equal("Etherbasket")
+  })
 })
